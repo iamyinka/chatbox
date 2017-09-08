@@ -1,11 +1,9 @@
 <?php 
 
-@mysqli_connect("localhost", "netguru", "success12", "shoutit");
+$connection = mysqli_connect("localhost", "netguru", "success12", "shoutit");
 
-if(mysqli_connect_error()) {
+if(mysqli_connect_errno()) {
 	echo "Wrong connection to database. " . mysqli_connect_error();
-} else {
-	echo "You are successfully connected to the Database";
 }
 
 

@@ -1,3 +1,13 @@
+<?php 
+
+include('database.php');
+
+$query = "SELECT * FROM shouts";
+$results = mysqli_query($connection, $query);
+
+?>
+
+
 <!doctype html>
 
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -36,11 +46,9 @@
     				<h1>Chat Box</h1>
 					<div class="chatbox">
 						<ul>
-							<li><span>10:50PM - </span><strong>Nathan</strong>: How are you today? How are you today? How are you today? How are you today? How are you today?</li>
-							<li><span>10:50PM - </span><strong>Nathan</strong>: How are you today?</li>
-							<li><span>10:50PM - </span><strong>Nathan</strong>: How are you today?</li>
-							<li><span>10:50PM - </span><strong>Nathan</strong>: How are you today?</li>
-							<li><span>10:50PM - </span><strong>Nathan</strong>: How are you today?</li>
+							<?php while($row = mysqli_fetch_assoc($results)) { ?>
+							<li><span><?php echo $row['time']; ?> - </span><strong><?php echo $row['username']; ?></strong>: <?php echo $row['message']; ?></li>
+							<?php } ?>
 						</ul>
 					</div>
 
