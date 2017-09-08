@@ -2,7 +2,7 @@
 
 include('database.php');
 
-$query = "SELECT * FROM shouts";
+$query = "SELECT * FROM shouts ORDER BY id DESC";
 $results = mysqli_query($connection, $query);
 
 ?>
@@ -54,6 +54,10 @@ $results = mysqli_query($connection, $query);
 
 					<div class="inputs">
 						<form action="process.php" method="POST" role="form">
+							
+							<?php if(isset($_GET['error'])) { ?>
+								<div class="alert alert-danger"><?php echo $_GET['error']; ?></div>
+							<?php }; ?>
 
 							<div class="form-group">
 								<input type="text" class="form-control" id="username" name="username" placeholder="Enter Name">
