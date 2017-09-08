@@ -1,0 +1,39 @@
+body {
+	background-color: grey;
+	font-family: "Trebuchet MS", sans-serif;
+	font-size: 16px;
+}
+
+.chat {
+	background-color: #444;
+	color: #fff;
+	padding: 10px;
+	margin-top: 60px;
+}
+
+h1 {
+	text-align: center;
+	border-bottom: 1px solid #fff;
+	margin-top: 0;
+	padding-bottom: 3px;
+}
+
+
+.chatbox {
+	background-color: #fff;
+	color: #555;
+	min-height: 300px;
+	line-height: 3em;
+	border-radius: 5px;
+}
+
+.chatbox span {
+	color: #c4c4c4;
+}
+
+.chatbox ul li {
+	border-bottom: 1px dashed #ccc;
+	list-style: none;
+	margin-left: -30px;
+	margin-right: 20px;
+}
